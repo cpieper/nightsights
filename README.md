@@ -14,6 +14,9 @@ Earth sweeps through clouds of cometary dust a handful of times each year — th
 - **Real star catalog** — ~65 bright named stars at their J2000 positions, so radiants land in the correct constellations.
 - **2D globe overlay** (Natural Earth coastlines) with day/night shading, reference parallels, and click-to-pick observer location with per-shower solar-altitude and radiant-altitude readouts.
 
+## Screenshot
+<img width="3496" height="2024" alt="image" src="https://github.com/user-attachments/assets/f6a19c05-a2fd-4064-b7de-35251e384bd7" />
+
 ## Running locally
 
 ```bash
@@ -67,6 +70,7 @@ This is a scaffold, not a research tool.
 - `src/picker.js` — raycaster + hover tooltip.
 - `src/ui.js` — time controller (single-source-of-truth simulated date).
 - `src/main.js` — wiring.
+
 
 ## License
 
