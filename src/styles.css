@@ -1,0 +1,264 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #05060a;
+  color: #e6e8ef;
+  overflow: hidden;
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  right: 16px;
+  max-width: 640px;
+  padding: 12px 14px;
+  background: rgba(10, 12, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.hud-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
+}
+
+.hud-row.controls {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.date-row {
+  gap: 8px;
+  align-items: baseline;
+}
+
+#date-input {
+  background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color-scheme: dark;
+}
+
+#date-input:focus {
+  outline: none;
+  border-color: rgba(138, 180, 255, 0.55);
+  background: rgba(138, 180, 255, 0.08);
+}
+
+.date-suffix {
+  color: rgba(230, 232, 239, 0.5);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.steps {
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.step-btn {
+  font-variant-numeric: tabular-nums;
+  min-width: 48px;
+}
+
+#time-slider {
+  flex: 1;
+  accent-color: #8ab4ff;
+}
+
+button,
+select {
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover,
+select:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hint {
+  color: rgba(230, 232, 239, 0.55);
+  font-size: 11px;
+}
+
+.shower {
+  font-size: 12px;
+  color: rgba(230, 232, 239, 0.78);
+  font-variant-numeric: tabular-nums;
+}
+
+.shower .active {
+  color: #9fe7ff;
+  font-weight: 600;
+}
+
+.shower .dormant {
+  color: rgba(230, 232, 239, 0.45);
+}
+
+.hover-tooltip {
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  padding: 8px 10px;
+  background: rgba(10, 12, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #e6e8ef;
+  max-width: 280px;
+  user-select: none;
+}
+
+.hover-tooltip .title {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.hover-tooltip .sub {
+  color: rgba(230, 232, 239, 0.7);
+}
+
+.hover-tooltip .period {
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hover-tooltip .streams-list {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hover-tooltip .stream-item {
+  color: rgba(230, 232, 239, 0.85);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Globe overlay (top-right floating panel) */
+#globe-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 360px;
+  max-width: 90vw;
+  z-index: 50;
+  user-select: none;
+}
+
+.globe-panel {
+  background: rgba(10, 12, 20, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  backdrop-filter: blur(6px);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: #e6e8ef;
+}
+
+.globe-title {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(230, 232, 239, 0.65);
+  margin-bottom: 8px;
+}
+
+.globe-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: auto;
+  border-radius: 6px;
+  cursor: crosshair;
+  background: #0a1324;
+}
+
+.globe-info {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.globe-hint {
+  color: rgba(230, 232, 239, 0.55);
+  font-size: 11px;
+}
+
+.globe-obs {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.globe-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  padding: 2px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.globe-row .name {
+  font-weight: 600;
+  min-width: 80px;
+}
+
+.globe-row .detail {
+  color: rgba(230, 232, 239, 0.65);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+
+.globe-row .yes {
+  color: #7ed491;
+  font-weight: 600;
+}
+
+.globe-row .no {
+  color: rgba(230, 232, 239, 0.45);
+}
+
+#focus-select {
+  min-width: 120px;
+}

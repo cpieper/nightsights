@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nightsights — inner solar system</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <div id="globe-container"></div>
+
+    <div id="hud">
+      <div class="hud-row date-row">
+        <input id="date-input" type="datetime-local" step="60" />
+        <span class="date-suffix">UTC</span>
+      </div>
+      <div class="hud-row shower">
+        <span id="shower-label">—</span>
+      </div>
+      <div class="hud-row">
+        <input id="time-slider" type="range" min="-730" max="730" value="0" step="any" />
+      </div>
+      <div class="hud-row steps">
+        <button class="step-btn" data-years="-1">−1y</button>
+        <button class="step-btn" data-months="-1">−1mo</button>
+        <button class="step-btn" data-days="-1">−1d</button>
+        <button id="btn-now">Now</button>
+        <button class="step-btn" data-days="1">+1d</button>
+        <button class="step-btn" data-months="1">+1mo</button>
+        <button class="step-btn" data-years="1">+1y</button>
+      </div>
+      <div class="hud-row controls">
+        <button id="btn-play">Play</button>
+        <button id="btn-scale">Scale: Visual</button>
+        <label>
+          focus
+          <select id="focus-select"></select>
+        </label>
+        <label>
+          speed
+          <select id="speed">
+            <option value="0.25">¼ day/s</option>
+            <option value="1" selected>1 day/s</option>
+            <option value="5">5 days/s</option>
+            <option value="30">30 days/s</option>
+            <option value="365">1 year/s</option>
+          </select>
+        </label>
+      </div>
+      <div class="hud-row hint">
+        drag to rotate · scroll to zoom · hover orbits for details
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

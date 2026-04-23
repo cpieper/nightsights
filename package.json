@@ -1,0 +1,21 @@
+{
+  "name": "nightsights",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Browser visualization of meteor shower dust trails and Earth's orbit.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "astronomy-engine": "^2.1.19",
+    "three": "^0.163.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  }
+}
